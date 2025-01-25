@@ -19,11 +19,8 @@
         <mxCell id="u4qym9Ppzm83e0D_M728-6" value="BLE Server" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="u4qym9Ppzm83e0D_M728-4">
           <mxGeometry x="200" y="40" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="u4qym9Ppzm83e0D_M728-19" value="&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap-mode: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22BLE%20Server%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Baspect%3Dfixed%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22520%22%20y%3D%22160%22%20width%3D%2280%22%20height%3D%2280%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="u4qym9Ppzm83e0D_M728-4">
-          <mxGeometry y="40" width="80" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="u4qym9Ppzm83e0D_M728-20" value="&lt;font face=&quot;Helvetica&quot;&gt;I²C Module&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="u4qym9Ppzm83e0D_M728-4">
-          <mxGeometry x="7.5" y="70" width="65" height="40" as="geometry" />
+        <mxCell id="u4qym9Ppzm83e0D_M728-23" value="SDA" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="u4qym9Ppzm83e0D_M728-4">
+          <mxGeometry y="50" width="60" height="60" as="geometry" />
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="u4qym9Ppzm83e0D_M728-5" target="u4qym9Ppzm83e0D_M728-6">
           <mxGeometry relative="1" as="geometry" />
@@ -39,6 +36,18 @@
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-18" value="Frontend" style="swimlane;startSize=23;" vertex="1" connectable="0" parent="1">
           <mxGeometry x="1000" y="60" width="160" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="u4qym9Ppzm83e0D_M728-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="u4qym9Ppzm83e0D_M728-21" target="u4qym9Ppzm83e0D_M728-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u4qym9Ppzm83e0D_M728-21" value="MAX30102 Sensor" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u4qym9Ppzm83e0D_M728-20" value="&lt;font face=&quot;Helvetica&quot;&gt;&lt;b&gt;I²C Communication Protocol&lt;/b&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="170" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u4qym9Ppzm83e0D_M728-25" value="heartrate and blood oxygen&lt;div&gt;data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="160" y="120" width="170" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

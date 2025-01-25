@@ -43,8 +43,8 @@
         <mxCell id="u4qym9Ppzm83e0D_M728-21" value="PPG Sensor&lt;div&gt;(MAX30102)&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="80" y="120" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="u4qym9Ppzm83e0D_M728-20" value="&lt;font face=&quot;Helvetica&quot;&gt;&lt;b&gt;I²C Communication Protocol&lt;/b&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="180" y="170" width="130" height="40" as="geometry" />
+        <mxCell id="u4qym9Ppzm83e0D_M728-20" value="&lt;font face=&quot;Helvetica&quot;&gt;&lt;b&gt;I²C Communication Protocol&lt;/b&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;strokeColor=light-dark(#fb0909, #ededed);align=center;" vertex="1" parent="1">
+          <mxGeometry x="170" y="170" width="130" height="40" as="geometry" />
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-25" value="heartrate and blood oxygen&lt;div&gt;data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="160" y="120" width="170" height="40" as="geometry" />

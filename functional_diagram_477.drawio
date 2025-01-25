@@ -5,10 +5,13 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="u4qym9Ppzm83e0D_M728-1" value="Mobile Application" style="swimlane" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="840" y="80" width="240" height="440" as="geometry" />
+          <mxGeometry x="840" y="80" width="320" height="440" as="geometry" />
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-5" value="BLE Client" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="u4qym9Ppzm83e0D_M728-1">
           <mxGeometry y="80" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u4qym9Ppzm83e0D_M728-16" value="Backend" style="swimlane" vertex="1" connectable="0" parent="u4qym9Ppzm83e0D_M728-1">
+          <mxGeometry y="20" width="160" height="420" as="geometry" />
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-4" value="ESP32 Microcontroller" style="swimlane" vertex="1" connectable="0" parent="1">
           <mxGeometry x="320" y="80" width="280" height="440" as="geometry" />
@@ -27,6 +30,9 @@
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-12" value="1. Scan for BLE devices&lt;div&gt;2. Establish Connection&lt;/div&gt;&lt;div&gt;3.&amp;nbsp; Subscribe to characteristic&amp;nbsp;&lt;/div&gt;&lt;div&gt;(heartrate and electrolyte)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="630" y="110" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="u4qym9Ppzm83e0D_M728-18" value="Frontend" style="swimlane;startSize=23;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1000" y="100" width="160" height="420" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

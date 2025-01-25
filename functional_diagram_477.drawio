@@ -46,8 +46,8 @@
         <mxCell id="u4qym9Ppzm83e0D_M728-11" value="Transmission of characteristic&#39;s&lt;div&gt;data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="620" y="180" width="190" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="u4qym9Ppzm83e0D_M728-12" value="1. Scan for BLE devices&lt;div&gt;2. Establish Connection&lt;/div&gt;&lt;div&gt;3.&amp;nbsp; Subscribe to characteristic&amp;nbsp;&lt;/div&gt;&lt;div&gt;(heartrate and electrolyte)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="630" y="60" width="180" height="70" as="geometry" />
+        <mxCell id="u4qym9Ppzm83e0D_M728-12" value="1. Scan for BLE devices&lt;div&gt;2. Establish Connection&lt;/div&gt;&lt;div&gt;3.&amp;nbsp; Subscribe to characteristic&amp;nbsp;&lt;/div&gt;&lt;div&gt;(heartrate, oxygen saturation, and electrolyte)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="585" y="60" width="270" height="70" as="geometry" />
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-18" value="Frontend" style="swimlane;startSize=23;" vertex="1" connectable="0" parent="1">
           <mxGeometry x="1000" y="60" width="160" height="340" as="geometry" />

@@ -117,6 +117,9 @@
         <mxCell id="u4qym9Ppzm83e0D_M728-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="u4qym9Ppzm83e0D_M728-43" target="u4qym9Ppzm83e0D_M728-56">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="u4qym9Ppzm83e0D_M728-66" value="voltage reading data" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="170" y="285" width="130" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

@@ -4,7 +4,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="u4qym9Ppzm83e0D_M728-1" value="Host PC" style="swimlane" vertex="1" connectable="0" parent="1">
+        <mxCell id="u4qym9Ppzm83e0D_M728-1" value="Mobile Application" style="swimlane" vertex="1" connectable="0" parent="1">
           <mxGeometry x="840" y="80" width="240" height="440" as="geometry" />
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-5" value="BLE Client" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="u4qym9Ppzm83e0D_M728-1">

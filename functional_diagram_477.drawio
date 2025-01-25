@@ -25,8 +25,8 @@
         <mxCell id="u4qym9Ppzm83e0D_M728-23" value="SDA" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="u4qym9Ppzm83e0D_M728-4">
           <mxGeometry y="50" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="u4qym9Ppzm83e0D_M728-27" value="heartrate and blood&lt;div&gt;&amp;nbsp;oxygen data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="u4qym9Ppzm83e0D_M728-4">
-          <mxGeometry x="60" y="45" width="130" height="40" as="geometry" />
+        <mxCell id="u4qym9Ppzm83e0D_M728-27" value="heartrate and&amp;nbsp;&lt;div&gt;&amp;nbsp;oxygen saturation data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="u4qym9Ppzm83e0D_M728-4">
+          <mxGeometry x="50" y="45" width="150" height="40" as="geometry" />
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="u4qym9Ppzm83e0D_M728-5" target="u4qym9Ppzm83e0D_M728-6">
           <mxGeometry relative="1" as="geometry" />
@@ -52,8 +52,8 @@
         <mxCell id="u4qym9Ppzm83e0D_M728-20" value="&lt;font face=&quot;Helvetica&quot;&gt;&lt;b&gt;I²C Communication Protocol&lt;/b&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;strokeColor=light-dark(#fb0909, #ededed);align=center;" vertex="1" parent="1">
           <mxGeometry x="170" y="170" width="130" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="u4qym9Ppzm83e0D_M728-25" value="heartrate and blood oxygen&lt;div&gt;data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="160" y="120" width="170" height="40" as="geometry" />
+        <mxCell id="u4qym9Ppzm83e0D_M728-25" value="heartrate and oxygen&lt;div&gt;saturation data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="175" y="120" width="140" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

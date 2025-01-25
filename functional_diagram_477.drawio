@@ -40,7 +40,7 @@
         <mxCell id="u4qym9Ppzm83e0D_M728-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="u4qym9Ppzm83e0D_M728-21" target="u4qym9Ppzm83e0D_M728-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="u4qym9Ppzm83e0D_M728-21" value="MAX30102 Sensor" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="u4qym9Ppzm83e0D_M728-21" value="PPG Sensor&lt;div&gt;(MAX30102)&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="80" y="120" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-20" value="&lt;font face=&quot;Helvetica&quot;&gt;&lt;b&gt;I²C Communication Protocol&lt;/b&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">

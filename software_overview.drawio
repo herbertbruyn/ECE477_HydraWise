@@ -291,24 +291,20 @@
         <mxCell id="FzbjmS4W4LAbnLG6PoYH-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="FzbjmS4W4LAbnLG6PoYH-7" target="FzbjmS4W4LAbnLG6PoYH-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="FzbjmS4W4LAbnLG6PoYH-7" target="FzbjmS4W4LAbnLG6PoYH-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="FzbjmS4W4LAbnLG6PoYH-7" value="Idle" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="360" y="200" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="FzbjmS4W4LAbnLG6PoYH-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="FzbjmS4W4LAbnLG6PoYH-9" target="FzbjmS4W4LAbnLG6PoYH-7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="FzbjmS4W4LAbnLG6PoYH-9" target="FzbjmS4W4LAbnLG6PoYH-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="FzbjmS4W4LAbnLG6PoYH-9" value="Heart Rate Data Collection" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="80" y="350" width="80" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="FzbjmS4W4LAbnLG6PoYH-10" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="FzbjmS4W4LAbnLG6PoYH-9">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="80" y="400" as="sourcePoint" />
-            <mxPoint x="130" y="350" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="10" y="330" />
-              <mxPoint x="80" y="330" />
-            </Array>
-          </mxGeometry>
         </mxCell>
         <mxCell id="FzbjmS4W4LAbnLG6PoYH-12" value="Interrupt" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="200" y="218" width="70" height="30" as="geometry" />
@@ -316,8 +312,40 @@
         <mxCell id="FzbjmS4W4LAbnLG6PoYH-14" value="Interrupt" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="235" y="390" width="70" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FzbjmS4W4LAbnLG6PoYH-15" target="FzbjmS4W4LAbnLG6PoYH-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="520" />
+              <mxPoint x="40" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="FzbjmS4W4LAbnLG6PoYH-15" value="Format BLE Characteristic" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="385" y="470" width="80" height="80" as="geometry" />
+          <mxGeometry x="80" y="480" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="FzbjmS4W4LAbnLG6PoYH-17" target="FzbjmS4W4LAbnLG6PoYH-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-17" value="Sweat Data Collection" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="570" y="350" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-19" value="data ready" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="130" y="440" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="FzbjmS4W4LAbnLG6PoYH-22" target="FzbjmS4W4LAbnLG6PoYH-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-22" value="Data Processing" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="570" y="480" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-24" value="ADC reading&amp;nbsp;&lt;div&gt;available&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="600" y="435" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="FzbjmS4W4LAbnLG6PoYH-25" target="FzbjmS4W4LAbnLG6PoYH-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-25" value="Format BLE Characteristic" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="440" y="415" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

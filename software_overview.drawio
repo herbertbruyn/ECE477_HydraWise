@@ -365,13 +365,19 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="ofGz7grXOkP2qNjbTllo-1" value="Idle" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="360" y="190" width="80" height="80" as="geometry" />
+          <mxGeometry x="360" y="250" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ofGz7grXOkP2qNjbTllo-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ofGz7grXOkP2qNjbTllo-2" target="ofGz7grXOkP2qNjbTllo-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ofGz7grXOkP2qNjbTllo-2" value="App Off" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="80" y="120" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ofGz7grXOkP2qNjbTllo-3" value="App On" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="240" y="120" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ofGz7grXOkP2qNjbTllo-5" value="enter app" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="165" y="118" width="70" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

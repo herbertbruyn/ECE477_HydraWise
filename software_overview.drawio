@@ -316,6 +316,9 @@
         <mxCell id="FzbjmS4W4LAbnLG6PoYH-14" value="Interrupt" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="235" y="390" width="70" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="FzbjmS4W4LAbnLG6PoYH-15" value="Format BLE Characteristic" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="385" y="470" width="80" height="80" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

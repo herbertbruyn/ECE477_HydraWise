@@ -31,6 +31,9 @@
         <mxCell id="L8LCguXX2HM2SOsSqfnE-9" value="Establish connection" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="125" y="495" width="110" height="110" as="geometry" />
         </mxCell>
+        <mxCell id="L8LCguXX2HM2SOsSqfnE-11" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Wait for User Input&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="320" y="360" width="120" height="120" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

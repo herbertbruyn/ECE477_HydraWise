@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "max30101.h"
+#include "LFS1K0.c"
 
 void app_main(void) {
     i2c_scan();

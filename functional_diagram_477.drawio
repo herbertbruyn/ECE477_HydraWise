@@ -221,7 +221,7 @@
           <mxGeometry x="460" y="955" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="vP7fXU4nIcjZddZ_0kmI-29" value="constant current / constant voltage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-105" y="540" width="210" height="30" as="geometry" />
+          <mxGeometry x="-110" y="530" width="210" height="30" as="geometry" />
         </mxCell>
         <mxCell id="vP7fXU4nIcjZddZ_0kmI-30" value="&lt;div&gt;2.8 V&lt;/div&gt;&lt;div&gt;-&lt;/div&gt;&lt;div&gt;4.2 V&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="130" y="500" width="50" height="60" as="geometry" />
@@ -230,7 +230,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vP7fXU4nIcjZddZ_0kmI-32" value="USB-C Receptacle" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="-170" y="460" width="80" height="80" as="geometry" />
+          <mxGeometry x="-190" y="460" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="vP7fXU4nIcjZddZ_0kmI-36" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -318,6 +318,9 @@
         </mxCell>
         <mxCell id="vP7fXU4nIcjZddZ_0kmI-79" value="&lt;font face=&quot;Helvetica&quot;&gt;&lt;b&gt;BLE Interface&lt;/b&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;strokeColor=light-dark(#fb0909, #ededed);align=center;" vertex="1" parent="1">
           <mxGeometry x="655" y="70" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vP7fXU4nIcjZddZ_0kmI-80" value="5 V" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="470" width="40" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

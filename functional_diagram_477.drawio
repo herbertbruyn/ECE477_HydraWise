@@ -16,7 +16,7 @@
         <mxCell id="u4qym9Ppzm83e0D_M728-5" value="BLE Client" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fad9d5;strokeColor=#ae4132;" parent="u4qym9Ppzm83e0D_M728-16" vertex="1">
           <mxGeometry y="60" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="u4qym9Ppzm83e0D_M728-37" value="Database&amp;nbsp;&lt;div&gt;(up to 24hrs data)&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fad9d5;strokeColor=#ae4132;" parent="u4qym9Ppzm83e0D_M728-16" vertex="1">
+        <mxCell id="u4qym9Ppzm83e0D_M728-37" value="Database" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fad9d5;strokeColor=#ae4132;" parent="u4qym9Ppzm83e0D_M728-16" vertex="1">
           <mxGeometry y="220" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="u4qym9Ppzm83e0D_M728-43" value="Data Analysis and Processing" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fad9d5;strokeColor=#ae4132;" parent="u4qym9Ppzm83e0D_M728-16" vertex="1">

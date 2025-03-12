@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <driver/gpio.h>
 #include <driver/adc.h>
+#include <driver/dac.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_adc_cal.h"
 #include "esp_err.h"
 #include "esp_log.h"
 
-#define SIGNAL_PIN GPIO_NUM_32 // Set this to GPIO pin
+#define SIGNAL_PIN GPIO_NUM_25 // Set this to GPIO pin
 
 #define ADC_CHANNEL_0 ADC1_CHANNEL_0 // Pin for V+
 #define ADC_CHANNEL_1 ADC1_CHANNEL_1 // Pin for V-
@@ -23,6 +24,7 @@
 #define B -5.775e-7
 #define C -4.183e-12 //
 
+/*
 // Initialize GPIO pin
 esp_err_t init_gpio() {
     gpio_config_t io_conf = {
@@ -33,6 +35,13 @@ esp_err_t init_gpio() {
         .intr_type = GPIO_INTR_DISABLE // Disable interrupts - ours comes from different source 
     };
     return gpio_config(&io_conf);
+}
+*/
+
+// Initialize DAC
+esp_err_t init_dac() {
+    dac_output_enable(DAC_CHANNEL_1);
+    return ESP_OK;
 }
 
 // Initialize ADC

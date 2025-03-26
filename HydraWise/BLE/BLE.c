@@ -13,12 +13,10 @@
 #include "services/gatt/ble_svc_gatt.h"
 #include "sdkconfig.h"
 
-# Define device
+// Define device
 char *TAG = "HydraWise BLE";
 uint8_t ble_addr_type;
 void ble_app_advertise(void);
-
-
 
 
 void app_main() {

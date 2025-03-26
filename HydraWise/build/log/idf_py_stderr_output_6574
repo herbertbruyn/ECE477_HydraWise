@@ -1,0 +1,201 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/Users/areej/.espressif/python_env/idf5.5_py3.13_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32 -DCCACHE_ENABLE=0 /Users/areej/ECE477_HydraWise/HydraWise
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:169 (add_library):
+  The target name "___idf_battery management" is reserved or not valid for
+  certain CMake features, such as generator expressions, and may result in
+  undefined behavior.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:318 (__component_add)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:443 (idf_build_component)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:479 (__project_component_dir)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:574 (__project_init)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:19 (set_property):
+  set_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:186 (__component_set_property)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:318 (__component_add)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:443 (idf_build_component)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:479 (__project_component_dir)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:574 (__project_init)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:23 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:186 (__component_set_property)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:318 (__component_add)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:443 (idf_build_component)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:479 (__project_component_dir)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:574 (__project_init)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:520 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:574 (__project_init)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:128 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:5 (get_property):
+  get_property could not find TARGET ___idf_battery management.  Perhaps it
+  has not yet been created.
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:130 (__component_get_property)
+  /Users/areej/esp/esp-idf/tools/cmake/component.cmake:217 (__component_write_properties)
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/areej/esp/esp-idf/tools/cmake/component.cmake:229 (message):
+  CMake Warning (dev) at build_properties.temp.cmake:8:
+
+    Syntax Warning in cmake code at column 106
+
+  
+
+    Argument not separated from preceding token by whitespace.
+
+  Call Stack (most recent call first):
+
+    /Users/areej/esp/esp-idf/tools/cmake/scripts/component_get_requirements.cmake:3 (include)
+
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+
+
+  CMake Error at
+  /Users/areej/esp/esp-idf/tools/cmake/scripts/component_get_requirements.cmake:141
+  (message):
+
+    Unknown component source for component ___idf_battery management:
+
+  
+
+
+
+Call Stack (most recent call first):
+  /Users/areej/esp/esp-idf/tools/cmake/build.cmake:655 (__component_get_requirements)
+  /Users/areej/esp/esp-idf/tools/cmake/project.cmake:736 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+

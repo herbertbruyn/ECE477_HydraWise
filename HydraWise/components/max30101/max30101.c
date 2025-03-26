@@ -3,6 +3,10 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "max30101.h"
+#include "esp_timer.h"
+#include "heartRate.h"
+#include "math.h"
+
 
 #define I2C_MASTER_NUM I2C_NUM_0
 #define MAX30101_ADDR 0x57
@@ -16,48 +20,109 @@
 #define MULTI_LED_CTRL1 0x11
 #define MULTI_LED_CTRL2 0x12
 
-#define BUFFER_SIZE 32
-#define THRESHOLD 20000  // Adjust threshold based on IR intensity
-#define BUFFER_SIZE 100  // Buffer to hold 50 data samples
+#define FIFO_BUFFER_SIZE 32
+#define HR_BUFFER_SIZE 400
+#define THRESHOLD 20000  // Adjust threshold based on intensity
 
-uint32_t hrBuffer[BUFFER_SIZE]; // Store heart rate values
+uint32_t hrBuffer[HR_BUFFER_SIZE]; // Store heart rate values
+static uint32_t bufferIndex = 0;
 static uint32_t lastPeakTime = 0;
-static uint8_t numBeats = 0;
-static uint32_t timeStamps[BUFFER_SIZE]; // Store time of each detected beat
-static uint8_t bufferIndex = 0;
+static uint32_t numBeats = 0;
+static uint32_t timeStamps[HR_BUFFER_SIZE]; // Store time of each detected beat
+
+#define ALPHA 0.2
 
 static bool i2c_driver_installed = false;  // Tracks if driver is installed
 
-/**
- * @brief Detect Heart Rates
- */
-void detect_heart_rate() {
-    uint32_t currentTime;
-    uint32_t timeDiff;
-    for (uint8_t i = 1; i < BUFFER_SIZE - 1; i++) {
-        if ((hrBuffer[i] > THRESHOLD) && (hrBuffer[i] > hrBuffer[i - 1]) && (hrBuffer[i] > hrBuffer[i + 1])) { // check for peak above threshold
-            currentTime = esp_timer_get_time() / 1000; // Get time in milliseconds
-            timeDiff = currentTime - lastPeakTime;
 
-            if (timeDiff > 300) {  // Ignore noise (minimum time between beats ~300ms)
-                timeStamps[numBeats % BUFFER_SIZE] = currentTime;
-                numBeats++;
-                lastPeakTime = currentTime;
+// /**
+//  * @brief Low Pass Filter
+//  */
+// uint32_t low_pass_filter(uint32_t raw_value) {
+//     static uint32_t filtered_value;  // Store last filtered value
+//     static bool initialized = false;  // Track if filter is initialized
+
+//     if (!initialized) {  
+//         filtered_value = raw_value;  // Initialize with the first valid value
+//         initialized = true;          // Set flag to prevent re-initialization
+//     } else {
+//         filtered_value = (ALPHA * raw_value) + ((1 - ALPHA) * filtered_value);
+//     }
+
+//     return filtered_value;
+// }
+
+// /**
+//  * @brief Detect Heart Rates
+//  */
+// void detect_heart_rate() {
+//     uint32_t currentTime;
+//     uint32_t timeDiff;
+    
+//     // for (uint32_t i = (bufferIndex - num_samples + HR_BUFFER_SIZE) % HR_BUFFER_SIZE; i != bufferIndex; i = (i + 1) % HR_BUFFER_SIZE){
+//     for (uint32_t i = 0; i < HR_BUFFER_SIZE; i = i + 1){
+//         hrBuffer[i] = low_pass_filter(hrBuffer[i]);
+//         if ((hrBuffer[i] > THRESHOLD) && (hrBuffer[i] > hrBuffer[i - 1]) && (hrBuffer[i] > hrBuffer[i + 1])) { // check for peak above threshold
+//             currentTime = esp_timer_get_time() / 1000; // Get time in milliseconds
+//             timeDiff = currentTime - lastPeakTime;
+
+//             if (timeDiff > 300) {  // Ignore noise (minimum time between beats ~300ms)
+//                 timeStamps[numBeats % HR_BUFFER_SIZE] = currentTime;
+//                 numBeats++;
+//                 lastPeakTime = currentTime;
+//             }
+//         }
+//     }
+// }
+
+// /**
+//  * @brief Convert Heart Rate to BPM
+//  */
+// uint8_t calculate_bpm() {
+//     if (numBeats < 2) return 0;  // Not enough data
+
+//     uint32_t oldest_beat_index = (numBeats > HR_BUFFER_SIZE) ? (numBeats % HR_BUFFER_SIZE) : 0;
+//     uint32_t totalTime = timeStamps[(numBeats - 1) % HR_BUFFER_SIZE] - timeStamps[oldest_beat_index];
+//     uint32_t avgTimeBetweenBeats = totalTime / (numBeats - 1);
+
+//     return (60000 / avgTimeBetweenBeats); // Convert ms to BPM
+// }
+
+// Function to process a buffer of heart rate samples
+void processHeartRateBuffer(uint32_t *buffer, size_t buffer_size) {
+    unsigned long currentTime, delta;
+
+    for (size_t i = 0; i < buffer_size; i++) {
+        uint32_t greenValue = buffer[i];
+
+        if (checkForBeat(greenValue)) {
+            printf("BEAT");
+
+            currentTime = esp_timer_get_time() / 1000;  // Convert to milliseconds
+            delta = currentTime - lastBeat;
+            lastBeat = currentTime;
+
+            if (delta > 0) {
+                beatsPerMinute = 60.0 / (delta / 1000.0);
+                beatsPerMinute = round(beatsPerMinute * 10.0) / 10.0;
+
+                if (beatsPerMinute < 255 && beatsPerMinute > 20) {
+                    rateSpot = (rateSpot + 1) % RATE_SIZE;
+                    rates[rateSpot] = beatsPerMinute;
+
+                    // Compute average BPM
+                    beatAvg = 0;
+                    for (uint8_t j = 0; j < RATE_SIZE; j++) {
+                        beatAvg += rates[j];
+                    }
+                    beatAvg /= RATE_SIZE;
+                    beatAvg = round(beatAvg);
+                }
             }
+
+            printf("BPM: %.1f, Avg BPM: %.1f", beatsPerMinute, beatAvg);
         }
     }
-}
-
-/**
- * @brief Convert Heart Rate to BPM
- */
-uint8_t calculate_bpm() {
-    if (numBeats < 2) return 0;  // Not enough data
-
-    uint32_t totalTime = timeStamps[(numBeats - 1) % BUFFER_SIZE] - timeStamps[0];
-    uint32_t avgTimeBetweenBeats = totalTime / (numBeats - 1);
-
-    return (60000 / avgTimeBetweenBeats); // Convert ms to BPM
 }
 
 /**
@@ -176,11 +241,11 @@ esp_err_t max30101_init() {
  * @brief Read FIFO data
  */
 esp_err_t max30101_read_fifo(uint32_t *buffer, uint8_t num_samples) {
-    if (num_samples > BUFFER_SIZE) {
-        num_samples = BUFFER_SIZE;
+    if (num_samples > FIFO_BUFFER_SIZE) {
+        num_samples = FIFO_BUFFER_SIZE;
     }
 
-    uint8_t fifo_data[3 * BUFFER_SIZE];  // 3 bytes per sample
+    uint8_t fifo_data[3 * FIFO_BUFFER_SIZE];  // 3 bytes per sample
 
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
     i2c_master_start(cmd);
@@ -201,9 +266,11 @@ esp_err_t max30101_read_fifo(uint32_t *buffer, uint8_t num_samples) {
 
     // Process FIFO data
     for (uint8_t i = 0; i < num_samples; i++) {
-        buffer[i] = ((uint32_t)fifo_data[i * 3] << 16) | ((uint32_t)fifo_data[i * 3 + 1] << 8) | fifo_data[i * 3 + 2];
-        printf("Sample %d - Green LED: %lu\n", i, buffer[i]);
+        uint8_t index = (bufferIndex + i) % HR_BUFFER_SIZE;  // Ensure circular buffer behavior
+        buffer[index] = ((uint32_t)fifo_data[i * 3] << 16) | ((uint32_t)fifo_data[i * 3 + 1] << 8) | fifo_data[i * 3 + 2];
+        printf("Sample %d - Green LED: %lu\n", index, buffer[index]);
     }
+    // bufferIndex = (bufferIndex + num_samples - 1) % HR_BUFFER_SIZE;  // Update circular index    
 
     return ESP_OK;
 }
@@ -219,7 +286,7 @@ esp_err_t max30101_update_fifo_rd_ptr(uint8_t fifo_wr_ptr) {
  * @brief Read heart rate data
  */
 void max30101_task(void *arg) {
-    uint8_t fifo_wr_ptr, fifo_rd_ptr;
+    uint8_t fifo_wr_ptr, fifo_rd_ptr, bpm;
 
     // Initialize I2C
     if (i2c_master_init() != ESP_OK) {
@@ -241,21 +308,26 @@ void max30101_task(void *arg) {
         }
 
         // Calculate available samples
-        uint8_t num_available_samples = (fifo_wr_ptr - fifo_rd_ptr) % 32;
-        uint8_t num_samples_to_read = num_available_samples > BUFFER_SIZE ? BUFFER_SIZE : num_available_samples;
+        uint8_t num_available_samples = (fifo_wr_ptr >= fifo_rd_ptr) ? 
+                                (fifo_wr_ptr - fifo_rd_ptr) : 
+                                (32 + fifo_wr_ptr - fifo_rd_ptr);
+        uint8_t num_samples_to_read = num_available_samples > FIFO_BUFFER_SIZE ? FIFO_BUFFER_SIZE : num_available_samples;
 
         if (num_samples_to_read > 0) {
             // Second transaction: Read samples
             if (max30101_read_fifo(hrBuffer, num_samples_to_read) == ESP_OK) {
                 printf("Successfully read %d samples from FIFO\n", num_samples_to_read);
-                detect_heart_rate()
+                if (bufferIndex + num_samples_to_read >= HR_BUFFER_SIZE){
+                    // detect_heart_rate();
+                    // bpm = calculate_bpm();
+                    processHeartRateBuffer(hrBuffer, HR_BUFFER_SIZE);
+                    // printf("\nHeart Rate (bpm): %d \n\n", bpm);
+                }
+                bufferIndex = (bufferIndex + num_samples_to_read - 1) % HR_BUFFER_SIZE;
             } else {
                 printf("Failed to read FIFO data\n");
-            }
-
-            // Third transaction: Update FIFO_RD_PTR if necessary
-            if (max30101_update_fifo_rd_ptr(fifo_wr_ptr) != ESP_OK) {
-                printf("Failed to update FIFO_RD_PTR\n");
+                // Third transaction: Update FIFO_RD_PTR if necessary
+                max30101_update_fifo_rd_ptr(fifo_wr_ptr);
             }
         }
 
@@ -282,11 +354,11 @@ void max30101_task(void *arg) {
 // #define portTICK_PERIOD_MS ( ( TickType_t ) 1000 / configTICK_RATE_HZ )
 
 // #define THRESHOLD 20000  // Adjust threshold based on IR intensity
-// #define BUFFER_SIZE 100  // Buffer to hold 50 data samples
-// uint32_t irBuffer[BUFFER_SIZE]; // Store 50 IR values
+// #define HR_BUFFER_SIZE 100  // Buffer to hold 50 data samples
+// uint32_t irBuffer[HR_BUFFER_SIZE]; // Store 50 IR values
 // static uint32_t lastPeakTime = 0;
 // static uint8_t numBeats = 0;
-// static uint32_t timeStamps[BUFFER_SIZE]; // Store time of each detected beat
+// static uint32_t timeStamps[HR_BUFFER_SIZE]; // Store time of each detected beat
 // static uint8_t bufferIndex = 0;
 
 // static bool i2c_driver_installed = false;  // Tracks if driver is installed
@@ -294,13 +366,13 @@ void max30101_task(void *arg) {
 // void detect_heart_rate() {
 //     uint32_t currentTime;
 //     uint32_t timeDiff;
-//     for (uint8_t i = 1; i < BUFFER_SIZE - 1; i++) {
+//     for (uint8_t i = 1; i < HR_BUFFER_SIZE - 1; i++) {
 //         if ((irBuffer[i] > THRESHOLD) && (irBuffer[i] > irBuffer[i - 1]) && (irBuffer[i] > irBuffer[i + 1])) { // check for peak above threshold
 //             currentTime = esp_timer_get_time() / 1000; // Get time in milliseconds
 //             timeDiff = currentTime - lastPeakTime;
 
 //             if (timeDiff > 300) {  // Ignore noise (minimum time between beats ~300ms)
-//                 timeStamps[numBeats % BUFFER_SIZE] = currentTime;
+//                 timeStamps[numBeats % HR_BUFFER_SIZE] = currentTime;
 //                 numBeats++;
 //                 lastPeakTime = currentTime;
 //             }
@@ -311,7 +383,7 @@ void max30101_task(void *arg) {
 // uint8_t calculate_bpm() {
 //     if (numBeats < 2) return 0;  // Not enough data
 
-//     uint32_t totalTime = timeStamps[(numBeats - 1) % BUFFER_SIZE] - timeStamps[0];
+//     uint32_t totalTime = timeStamps[(numBeats - 1) % HR_BUFFER_SIZE] - timeStamps[0];
 //     uint32_t avgTimeBetweenBeats = totalTime / (numBeats - 1);
 
 //     return (60000 / avgTimeBetweenBeats); // Convert ms to BPM
@@ -526,7 +598,7 @@ void max30101_task(void *arg) {
                     
 //                     // Store in circular buffer
 //                     irBuffer[bufferIndex] = fifo_data;
-//                     bufferIndex = (bufferIndex + 1) % BUFFER_SIZE;
+//                     bufferIndex = (bufferIndex + 1) % HR_BUFFER_SIZE;
 //                     detect_heart_rate();
 //                     bpm = calculate_bpm();
 //                     printf("Raw Sensor Data: %lu\n", fifo_data);

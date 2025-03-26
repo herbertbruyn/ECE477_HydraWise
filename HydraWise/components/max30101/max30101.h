@@ -17,7 +17,7 @@
 
 // Function Prototypes
 esp_err_t max30101_read_register(uint8_t reg, uint8_t *data);
-esp_err_t max30101_read_fifo(uint8_t *data_h, uint8_t *data_m, uint8_t *data_l);
+esp_err_t max30101_read_fifo(uint32_t *buffer, uint8_t num_samples);
 esp_err_t i2c_master_init(void);
 void max30101_task(void *arg);
 void i2c_scan();

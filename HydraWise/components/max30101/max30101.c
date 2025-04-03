@@ -23,6 +23,10 @@
 #define FIFO_BUFFER_SIZE 32
 #define HR_BUFFER_SIZE 400
 #define THRESHOLD 20000  // Adjust threshold based on intensity
+#define TIME_WINDOW 10 // Time window in seconds
+#define NUM_SAMPLES 100 // Number of samples to calculate BPM
+
+
 
 uint32_t hrBuffer[HR_BUFFER_SIZE]; // Store heart rate values
 static uint32_t bufferIndex = 0;
@@ -335,6 +339,28 @@ void max30101_task(void *arg) {
     }
 }
 
+// Find BPM for samples over a certain time period
+int max30101_convert_fifo_bpm() {
+    int numpeaks = 0;
+    int startIndex = (bufferIndex + HR_BUFFER_SIZE - NUM_SAMPLES) % HR_BUFFER_SIZE;
+
+
+    for (int i = 0; i < NUM_SAMPLES - 1; i++) {
+        if (hrBuffer[i] > THRESHOLD && hrBuffer[i] > hrBuffer[i-1] && hrBuffer[i] > hrBuffer[i+1]) {
+            numpeaks++;
+        }
+    }
+
+    if (numpeaks < 2) {
+        printf("Not enough peaks detected");
+        return;
+    }
+
+    int bpm = (numpeaks / TIME_WINDOW) * 60; 
+    printf("BPM: %d\n", bpm);
+    return bpm;
+  
+}
 // #include <stdio.h>
 // #include "driver/i2c_master.h"
 // #include "freertos/FreeRTOS.h"
